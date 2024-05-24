@@ -2,11 +2,29 @@
 #### Infinity Iterators of sequences
 Infinity Iterators are a powerful tool for handling endless or large sequences of data. Designed for efficiency and flexibility, these iterators allow seamless traversal and manipulation of sequences without requiring the entire sequence to be loaded into memory.
 
+
+## Installation
+
+Install the package via Composer:
+
+```bash
+composer require diephp/sequences
+```
+
+Or manually add it to your `composer.json`:
+
+```json
+"require": {
+    "diephp/sequences": "^1.0.0"
+}
+```
+
 ### Key Features
 Endless Sequences: Handle infinite sequences gracefully, making them suitable for scenarios where data is continuously generated or streamed.
 Lazy Evaluation: Elements are generated on-the-fly, ensuring minimal memory usage and optimized performance.
 Customizable: Easily define custom sequences and behaviors to fit specific needs.
 Composable: Combine multiple iterators to create complex data flows and transformations.
+
 
 ## Use Cases
 Data Streaming: Ideal for applications that process continuous data streams, such as live feeds or real-time analytics.
