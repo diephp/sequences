@@ -15,7 +15,7 @@ Or manually add it to your `composer.json`:
 
 ```json
 "require": {
-    "diephp/sequences": "^1.0.0"
+    "diephp/sequences": "^1.1.0"
 }
 ```
 
