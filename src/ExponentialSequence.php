@@ -50,7 +50,7 @@ class ExponentialSequence implements \Iterator
         }
 
         $this->start = $start;
-        $this->times = $start;
+        $this->times = 1;
         $this->percentage = $percentage;
         $this->value = $start;
     }
