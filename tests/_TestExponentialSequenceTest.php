@@ -70,6 +70,15 @@ class _TestExponentialSequenceTest extends TestCase
 
         $this->assertEquals(4, $sequence->current());
         $sequence->next();
+        
+        $this->assertEquals(8, $sequence->current());
+        $sequence->next();
+
+        $this->assertEquals(64, $sequence->current());
+        $sequence->next();
+        
+        $this->assertEquals(512, $sequence->current());
+        $sequence->next();
 
         $this->assertEquals(4096, $sequence->current());
         $sequence->next();
