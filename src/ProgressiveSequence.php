@@ -40,20 +40,20 @@ class ProgressiveSequence implements \Iterator
     {
         if ($start < 1) {
             throw new InvalidArgumentException(
-                'ExponentialSequence expects $start argument to be an integer, greater than or equal to 1'
+                'ProgressiveSequence expects $start argument to be an integer, greater than or equal to 1'
             );
         }
 
         if ($percentage < 1 || $percentage > 100) {
             throw new InvalidArgumentException(
-                'ExponentialSequence expects $percentage argument to be an integer, between 1 and 100'
+                'ProgressiveSequence expects $percentage argument to be an integer, between 1 and 100'
             );
         }
 
         $this->start = $start;
         $this->value = $start;
         $this->percentage = $percentage;
-        $this->times++;
+        $this->times = 1;
     }
 
     #[\ReturnTypeWillChange]
