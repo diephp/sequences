@@ -17,6 +17,7 @@ final class InfiniteSequence implements Iterator
 {
 
     private $current = 0;
+    private $start = 0;
 
     /**
      * Initializes a new instance of the LinearSequence class.
@@ -33,7 +34,7 @@ final class InfiniteSequence implements Iterator
             );
         }
 
-        $this->current = $start;
+        $this->current = $this->start = $start;
     }
 
     #[\ReturnTypeWillChange]
@@ -63,7 +64,7 @@ final class InfiniteSequence implements Iterator
     #[\ReturnTypeWillChange]
     public function rewind()
     {
-        $this->current = 0;
+        $this->current = $this->start;
     }
 
 }

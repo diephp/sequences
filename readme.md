@@ -70,15 +70,113 @@ foreach ($sequence AS $value) {
 ......
  */
 ```
-### RandSequence
-Represents a random sequence generator that implements the Iterator interface.
+
+### LinearSequence
+Represents a linear sequence that implements the Iterator interface.
 ```php
-$sequence = new \DiePHP\Sequences\RandSequence(50, 60);
+$sequence = new \DiePHP\Sequences\LinearSequence(100, 50);
 foreach ($sequence AS $value) {
     var_dump($value);
 }
 /**
- *  int(55)
+ *  int(100)
+ *  int(150)
+ *  int(200)
+ *  int(250)
+ *  int(300)
+ *  int(350)
+ *  int(400)
+......
+ */
+```
+
+
+```php
+$sequence = new \DiePHP\Sequences\LinearSequence(0, 10);
+foreach ($sequence AS $value) {
+    var_dump($value);
+}
+/**
+ *  int(0)
+ *  int(10)
+ *  int(20)
+ *  int(30)
+ *  int(40)
+......
+ */
+```
+
+### FibonacciSequence
+This class generates a Fibonacci sequence, implementing the Iterator interface.
+```php
+$sequence = new \DiePHP\Sequences\FibonacciSequence(2);
+foreach ($sequence AS $value) {
+    var_dump($value);
+}
+/**
+ *  int(2)
+ *  int(2)
+ *  int(4)
+ *  int(6)
+ *  int(10)
+ *  int(16)
+ *  int(26)
+......
+ */
+```
+
+### InfiniteSequence
+InfiniteSequence is an implementation of the Iterator interface, representing an infinite sequence of integers.
+```php
+$sequence = new \DiePHP\Sequences\InfiniteSequence(2);
+foreach ($sequence AS $value) {
+    var_dump($value);
+}
+/**
+ *  int(2)
+ *  int(3)
+ *  int(4)
+ *  int(5)
+ *  int(6)
+ *  int(7)
+ *  int(8)
+......
+ */
+```
+
+### UniqSequence
+Represents a random sequence generator that implements the Iterator interface.
+
+*** Guarantees uniqueness but may consume a lot of memory for large values.
+```php
+$sequence = new \DiePHP\Sequences\UniqRandSequence(1, 100);
+foreach ($sequence AS $value) {
+    var_dump($value);
+}
+/**
+ *  int(34)
+ *  int(20)
+ *  int(75)
+ *  int(88)
+ *  int(4)
+ *  int(72)
+ *  int(98)
+ *  int(21)
+ *  int(9)
+......
+ */
+```
+### RandSequence
+Represents a random sequence generator that implements the Iterator interface.
+
+*** Does not guarantee unique values.
+```php
+$sequence = new \DiePHP\Sequences\RandSequence(1, 100);
+foreach ($sequence AS $value) {
+    var_dump($value);
+}
+/**
+ *  int(2)
  *  int(58)
  *  int(51)
  *  int(55)
@@ -91,37 +189,6 @@ foreach ($sequence AS $value) {
  */
 ```
 
-### LinearSequence
-Represents a linear sequence that implements the Iterator interface.
-```php
-$sequence = new \DiePHP\Sequences\LinearSequence(1, 10);
-foreach ($sequence AS $value) {
-    var_dump($value);
-}
-/**
- *  int(1)
- *  int(11)
- *  int(21)
- *  int(31)
- *  int(41)
- *  int(41)
- *  int(51)
-......
- */
-```
-```php
-$sequence = new \DiePHP\Sequences\LinearSequence(0, 10);
-foreach ($sequence AS $value) {
-    var_dump($value);
-}
-/**
- *  int(0)
- *  int(10)
- *  int(20)
- *  int(30)
-......
- */
-```
 
 ## Tests
 ```bash
