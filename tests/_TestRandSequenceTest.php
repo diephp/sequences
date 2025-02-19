@@ -9,7 +9,7 @@ class _TestRandSequenceTest extends TestCase
     /**
      * @test
      */
-    public function testRandSequenceConstructionWithValidArguments() : void
+    public function testRandSequenceConstructionWithValidArguments(): void
     {
         $sequence = new RandSequence(0, 10);
         $this->assertInstanceOf(RandSequence::class, $sequence);
@@ -18,7 +18,7 @@ class _TestRandSequenceTest extends TestCase
     /**
      * @test
      */
-    public function testRandSequenceConstructionWithInvalidStart() : void
+    public function testRandSequenceConstructionWithInvalidStart(): void
     {
         $this->expectException(InvalidArgumentException::class);
         $sequence = new RandSequence(-1, 10);
@@ -27,14 +27,14 @@ class _TestRandSequenceTest extends TestCase
     /**
      * @test
      */
-    public function testRandSequenceConstructionWithInvalidEnd() : void
+    public function testRandSequenceConstructionWithInvalidEnd(): void
     {
         $this->expectException(InvalidArgumentException::class);
         $sequence = new RandSequence(0, 0);
 
     }
 
-    public function testRandSequence() : void
+    public function testRandSequence(): void
     {
         $sequence = new RandSequence(50, 60);
 

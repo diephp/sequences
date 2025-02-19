@@ -14,7 +14,7 @@ class _TestProgressiveSequenceTest extends TestCase
     /**
      * Test setup
      */
-    protected function setUp() : void
+    protected function setUp(): void
     {
         parent::setUp();
     }

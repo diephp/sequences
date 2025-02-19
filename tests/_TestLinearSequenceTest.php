@@ -15,7 +15,7 @@ class _TestLinearSequenceTest extends TestCase
      * In case of invalid input, function should thrown an InvalidArgumentException
      */
 
-    public function testLinearSequenceConstructor() : void
+    public function testLinearSequenceConstructor(): void
     {
         //Test with valid parameters
         $start = 0;

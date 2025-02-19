@@ -5,23 +5,36 @@ namespace DiePHP\Sequences;
 use InvalidArgumentException;
 
 /**
- * Class FibonacciSequence
- * Represents a Fibonacci sequence iterator.
+ * This class generates a Fibonacci sequence, implementing the Iterator interface.
+ *
+ * The Fibonacci sequence starts with two initial numbers (usually 0 and 1), with each subsequent number being the sum
+ * of the two preceding ones. This implementation allows traversing the sequence using an iterator interface.
+ *
+ * The starting value can be customized through the constructor. If no start value is provided, the sequence begins at 0.
+ *
+ * Methods in this class implement the required Iterator interface functionality.
  */
-class FibonacciSequence implements \Iterator
+final class FibonacciSequence implements \Iterator
 {
 
     private $current = 0;
 
-    private $next    = 1;
+    private $next = 1;
 
-    private $start   = 0;
+    private $start = 0;
 
+    /**
+     * Constructs a new instance of the class.
+     *
+     * @param int $start The starting value for the sequence. Must be greater than or equal to 0.
+     * @return void
+     * @throws InvalidArgumentException If $start is less than 0.
+     */
     public function __construct(int $start = 0)
     {
         if ($start < 0) {
             throw new InvalidArgumentException(
-                'LinearSequence expects $start argument to be an integer, greater than or equal to 0'
+                'FibonacciSequence expects $start argument to be an integer, greater than or equal to 0'
             );
         }
 

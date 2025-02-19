@@ -5,8 +5,14 @@ namespace DiePHP\Sequences;
 use InvalidArgumentException;
 
 /**
- * Class LinearSequence
- * Represents a linear sequence that implements the Iterator interface.
+ * Represents a linear sequence of numbers that implements the Iterator interface.
+ * The sequence begins at a specified starting point and increments by a set amount on each iteration.
+ *
+ * This class is designed to provide a simple interface for iterating through a sequence
+ * of integers in a linear progression.
+ *
+ * The `start` property determines the starting value of the sequence, while the `amount`
+ * property defines the increment applied to the value on each iteration.
  */
 final class LinearSequence implements \Iterator
 {
@@ -27,8 +33,13 @@ final class LinearSequence implements \Iterator
     private int $value = 0;
 
     /**
-     * @param int $start
-     * @param int $amount
+     * Constructs a new instance of the LinearSequence class.
+     *
+     * @param int $start The starting value of the sequence. Must be greater than or equal to 0.
+     * @param int $amount The amount that determines the progression in the sequence.
+     * @return void
+     *
+     * @throws InvalidArgumentException If the $start parameter is less than 0.
      */
     public function __construct(int $start, int $amount)
     {

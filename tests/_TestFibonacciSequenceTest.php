@@ -11,7 +11,7 @@ class _TestFibonacciSequenceTest extends TestCase
      */
     protected $fibonacciSeq;
 
-    protected function setUp() : void
+    protected function setUp(): void
     {
         // Start Fibonacci sequence at 0
         $this->fibonacciSeq = new FibonacciSequence(0);

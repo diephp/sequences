@@ -5,11 +5,11 @@ namespace DiePHP\Sequences;
 use InvalidArgumentException;
 
 /**
- * Class ProgressiveSequence
- * Represents a progressive sequence that can be iterated over.
- * Implements the Iterator interface.
+ * Represents a sequence of numbers that progresses based on a percentage growth
+ * from a starting value. Implements the Iterator interface to allow iteration
+ * over calculated progressive values.
  */
-class ProgressiveSequence implements \Iterator
+final class ProgressiveSequence implements \Iterator
 {
 
     /**
@@ -33,8 +33,13 @@ class ProgressiveSequence implements \Iterator
     private int $times = 0;
 
     /**
-     * @param int $start
-     * @param int $percentage
+     * Constructs a new instance of the ProgressiveSequence class.
+     *
+     * @param int $start The starting value, which must be an integer greater than or equal to 1.
+     * @param int $percentage The percentage value, which must be an integer between 1 and 100.
+     * @return void
+     *
+     * @throws InvalidArgumentException If $start is less than 1, or if $percentage is not between 1 and 100.
      */
     public function __construct(int $start, int $percentage)
     {
@@ -65,7 +70,7 @@ class ProgressiveSequence implements \Iterator
     #[\ReturnTypeWillChange]
     public function next()
     {
-        $this->value = (int) \round($this->value + ($this->start * ($this->percentage / 100)) * $this->times);
+        $this->value = (int)\round($this->value + ($this->start * ($this->percentage / 100)) * $this->times);
         $this->times++;
     }
 

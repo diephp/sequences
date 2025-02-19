@@ -5,10 +5,10 @@ namespace DiePHP\Sequences;
 use InvalidArgumentException;
 
 /**
- * Class ExponentialSequence
- * Represents an exponential sequence that implements the Iterator interface.
+ * Represents an exponential sequence generator that implements the Iterator interface.
+ * The sequence is derived based on a starting value and a percentage increment, applied exponentially.
  */
-class ExponentialSequence implements \Iterator
+final class ExponentialSequence implements \Iterator
 {
 
     /**
@@ -32,8 +32,12 @@ class ExponentialSequence implements \Iterator
     private int $times = 0;
 
     /**
-     * @param int $start
-     * @param int $percentage
+     * Constructor for the ExponentialSequence class.
+     *
+     * @param int $start The starting value, must be an integer greater than or equal to 1.
+     * @param int $percentage The percentage value, must be an integer between 1 and 100.
+     * @return void
+     * @throws InvalidArgumentException If $start is less than 1 or $percentage is not between 1 and 100.
      */
     public function __construct(int $start, int $percentage)
     {
@@ -56,7 +60,7 @@ class ExponentialSequence implements \Iterator
     }
 
     #[\ReturnTypeWillChange]
-    public function current() : int
+    public function current(): int
     {
         return $this->value;
     }
@@ -64,7 +68,7 @@ class ExponentialSequence implements \Iterator
     #[\ReturnTypeWillChange]
     public function next()
     {
-        $this->value = (int) \round(\pow($this->start * (1 + $this->percentage / 100), $this->times));
+        $this->value = (int)\round(\pow($this->start * (1 + $this->percentage / 100), $this->times));
         $this->times++;
     }
 
