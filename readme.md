@@ -15,7 +15,7 @@ Or manually add it to your `composer.json`:
 
 ```json
 "require": {
-    "diephp/sequences": "^v1.2.1"
+    "diephp/sequences": "^v1.3.0"
 }
 ```
 
@@ -48,6 +48,49 @@ foreach ($sequence AS $value) {
  *  int(16)
  *  int(32)
  *  int(64)
+......
+ */
+```
+
+### LogarithmicSequence
+Represents a sequence where each value is computed logarithmically
+based on a given start value and percentage increment.
+```php
+$sequence = new \DiePHP\Sequences\ExponentialSequence(1000000, 100);
+foreach ($sequence AS $value) {
+    var_dump($value);
+}
+/**
+ *  int(1000000)
+ *  int(2866747)
+ *  int(8218239)
+ *  int(23559615)
+ *  int(67539464)
+ *  int(193618581)
+ *  int(555055559)
+ *  int(1591204067)
+ *  int(4561580082)
+ *  int(13076897726)
+......
+ */
+```
+
+```php
+$sequence = new \DiePHP\Sequences\ExponentialSequence(10, 50);
+foreach ($sequence AS $value) {
+    var_dump($value);
+}
+/**
+ *  int(10)
+ *  int(20)
+ *  int(40)
+ *  int(80)
+ *  int(159)
+ *  int(315)
+ *  int(623)
+ *  int(1231)
+ *  int(2432)
+ *  int(4805)
 ......
  */
 ```
