@@ -1,5 +1,4 @@
 {
-    "version": "v1.3.0",
     "name": "diephp/sequences",
     "description": "Iterator of sequences",
     "keywords": [
