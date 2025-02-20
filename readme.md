@@ -14,8 +14,10 @@ composer require diephp/sequences
 Or manually add it to your `composer.json`:
 
 ```json
-"require": {
+{
+  "require": {
     "diephp/sequences": "^v1.3.0"
+  }
 }
 ```
 
@@ -56,7 +58,7 @@ foreach ($sequence AS $value) {
 Represents a sequence where each value is computed logarithmically
 based on a given start value and percentage increment.
 ```php
-$sequence = new \DiePHP\Sequences\ExponentialSequence(1000000, 100);
+$sequence = new \DiePHP\Sequences\LogarithmicSequence(1000000, 100);
 foreach ($sequence AS $value) {
     var_dump($value);
 }
@@ -76,7 +78,7 @@ foreach ($sequence AS $value) {
 ```
 
 ```php
-$sequence = new \DiePHP\Sequences\ExponentialSequence(10, 50);
+$sequence = new \DiePHP\Sequences\LogarithmicSequence(10, 50);
 foreach ($sequence AS $value) {
     var_dump($value);
 }
